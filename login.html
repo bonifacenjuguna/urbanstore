@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Sign Up – UrbanTech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .auth-tab-radio { display: none; }
+
+    /* Default: Login active */
+    .tab-login-label  { color: var(--primary); border-bottom: 2px solid var(--primary); }
+    .tab-signup-label { color: var(--text-muted); border-bottom: 2px solid transparent; }
+    #form-login  { display: block; }
+    #form-signup { display: none; }
+
+    /* Sign Up checked */
+    #tab-signup:checked ~ .auth-wrapper .tab-signup-label { color: var(--primary); border-bottom: 2px solid var(--primary); }
+    #tab-signup:checked ~ .auth-wrapper .tab-login-label  { color: var(--text-muted); border-bottom: 2px solid transparent; }
+    #tab-signup:checked ~ .auth-wrapper #form-login  { display: none; }
+    #tab-signup:checked ~ .auth-wrapper #form-signup { display: block; }
+
+    /* Login checked */
+    #tab-login:checked ~ .auth-wrapper .tab-login-label  { color: var(--primary); border-bottom: 2px solid var(--primary); }
+    #tab-login:checked ~ .auth-wrapper .tab-signup-label { color: var(--text-muted); border-bottom: 2px solid transparent; }
+    #tab-login:checked ~ .auth-wrapper #form-login  { display: block; }
+    #tab-login:checked ~ .auth-wrapper #form-signup { display: none; }
+
+    .auth-tab-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+    .auth-tab-bar label {
+      padding: 1rem;
+      text-align: center;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .social-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.65rem;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.6);
+      font-size: 0.85rem; font-weight: 500; cursor: pointer;
+      font-family: var(--font-body);
+      transition: var(--transition);
+    }
+    .social-btn:hover { background: rgba(255,255,255,0.95); transform: translateY(-1px); }
+    .divider { text-align: center; margin: 1.25rem 0; position: relative; }
+    .divider::before { content:''; position:absolute; left:0; right:0; top:50%; height:1px; background:rgba(0,0,0,0.08); }
+    .divider span { background:rgba(255,255,255,0.9); padding:0 0.75rem; color:var(--text-muted); font-size:0.8rem; position:relative; }
+  </style>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+<!-- Radios must be BEFORE (above) .auth-wrapper in DOM so ~ general sibling selector works -->
+<input type="radio" name="authTab" id="tab-login"  class="auth-tab-radio" checked/>
+<input type="radio" name="authTab" id="tab-signup" class="auth-tab-radio"/>
+
+<nav class="navbar">
+  <div class="container"><div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">U</span><span class="logo-urban">Urban</span><span class="logo-tech">Tech</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="#">Products</a>
+        <ul class="dropdown-menu">
+          <li><a href="phones.html">📱 Phones</a></li>
+          <li><a href="laptops.html">💻 Laptops</a></li>
+          <li><a href="accessories.html">🎧 Accessories</a></li>
+        </ul>
+      </li>
+      <li><a href="new-arrivals.html">New Arrivals</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-icon-btn">👤</a>
+      <a href="cart.html" class="nav-icon-btn">🛒<span class="cart-badge">3</span></a>
+      <a href="#mobileNav" class="hamburger"><span></span><span></span><span></span></a>
+    </div>
+  </div></div>
+</nav>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#" class="mobile-nav-close">✕</a>
+  <a href="index.html">🏠 Home</a>
+  <div class="mobile-nav-section">Products</div>
+  <a href="phones.html">📱 Phones</a>
+  <a href="laptops.html">💻 Laptops</a>
+  <a href="accessories.html">🎧 Accessories</a>
+  <a href="new-arrivals.html">✨ New Arrivals</a>
+  <a href="reviews.html">⭐ Reviews</a>
+  <a href="about.html">ℹ️ About</a>
+  <a href="contact.html">✉️ Contact</a>
+  <div class="mobile-nav-section">Account</div>
+  <a href="login.html">🔑 Login / Sign Up</a>
+  <a href="cart.html">🛒 Cart</a>
+</nav>
+
+<!-- .auth-wrapper is a sibling of the radio inputs — CSS ~ works correctly here -->
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <div class="auth-tab-bar">
+      <label for="tab-login"  class="tab-login-label">Login</label>
+      <label for="tab-signup" class="tab-signup-label">Sign Up</label>
+    </div>
+
+    <div class="auth-form-wrap">
+
+      <div style="text-align:center;margin-bottom:1.5rem;">
+        <a href="index.html" class="nav-logo" style="justify-content:center;font-size:1.4rem;">
+          <span class="logo-mark">U</span>
+          <span class="logo-urban">Urban</span><span class="logo-tech">Tech</span>
+        </a>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div id="form-login">
+        <div class="auth-title">Welcome back 👋</div>
+        <div class="auth-subtitle">Sign in to your UrbanTech account</div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <div class="form-input-wrap">
+            <span class="form-input-icon">✉️</span>
+            <input type="email" class="form-input has-icon" placeholder="you@example.com"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="form-input-wrap">
+            <span class="form-input-icon">🔒</span>
+            <input type="password" class="form-input has-icon" placeholder="••••••••"/>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:0.83rem;">
+          <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;color:var(--text-secondary);">
+            <input type="checkbox" style="accent-color:var(--primary);"/> Remember me
+          </label>
+          <a href="#" style="color:var(--primary);font-weight:500;">Forgot password?</a>
+        </div>
+
+        <a href="account.html" class="btn btn-primary btn-full btn-lg">Sign In →</a>
+
+        <div class="divider"><span>or continue with</span></div>
+
+        <div style="display:flex;flex-direction:row;justify-content:space-between;gap:1rem;">
+  <button class="social-btn" style="flex:1;">
+    <img src="images/icons/google.png" width="18" alt="Google"/> Google
+  </button>
+  <button class="social-btn" style="flex:1;">
+    <img src="images/icons/fb.png" width="18" alt="Facebook"/> Facebook
+  </button>
+</div>
+
+        <p style="text-align:center;margin-top:1.5rem;font-size:0.83rem;color:var(--text-muted);">
+          Don't have an account?
+          <label for="tab-signup" style="color:var(--primary);font-weight:600;cursor:pointer;">Sign up free →</label>
+        </p>
+      </div>
+
+      <!-- SIGN UP FORM -->
+      <div id="form-signup">
+        <div class="auth-title">Create account 🚀</div>
+        <div class="auth-subtitle">Join UrbanTech for faster checkout & order tracking</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="James"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Njoroge"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <div class="form-input-wrap">
+            <span class="form-input-icon">✉️</span>
+            <input type="email" class="form-input has-icon" placeholder="you@example.com"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <div class="form-input-wrap">
+            <span class="form-input-icon">📱</span>
+            <input type="tel" class="form-input has-icon" placeholder="+254 700 000 000"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="form-input-wrap">
+            <span class="form-input-icon">🔒</span>
+            <input type="password" class="form-input has-icon" placeholder="Min 8 characters"/>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1.5rem;font-size:0.82rem;color:var(--text-secondary);">
+          <label style="display:flex;align-items:flex-start;gap:0.5rem;cursor:pointer;">
+            <input type="checkbox" style="accent-color:var(--primary);margin-top:2px;"/>
+            I agree to the
+            <a href="#" style="color:var(--primary);font-weight:500;">Terms of Service</a>
+            and <a href="#" style="color:var(--primary);font-weight:500;">Privacy Policy</a>
+          </label>
+        </div>
+
+        <a href="account.html" class="btn btn-primary btn-full btn-lg">Create Account →</a>
+        
+      <div class="divider"><span>or continue with</span></div>
+
+        <div style="display:flex;flex-direction:row;justify-content:space-between;gap:1rem;">
+  <button class="social-btn" style="flex:1;">
+    <img src="images/icons/google.png" width="18" alt="Google"/> Google
+  </button>
+  <button class="social-btn" style="flex:1;">
+    <img src="images/icons/fb.png" width="18" alt="Facebook"/> Facebook
+  </button>
+</div>
+        
+        <p style="text-align:center;margin-top:1.5rem;font-size:0.83rem;color:var(--text-muted);">
+          Already have an account?
+          <label for="tab-login" style="color:var(--primary);font-weight:600;cursor:pointer;">Sign in →</label>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">UrbanTech</span>
+        <p class="footer-desc">Your trusted tech store in Narok. Premium electronics at honest prices.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon"><img src="images/icons/ig.png" alt="Instagram"></a>
+          <a href="#" class="social-icon"><img src="images/icons/fb.png" alt="Facebook"></a>
+          <a href="#" class="social-icon"><img src="images/icons/linkdln.png" alt="LinkedIn"></a>
+          <a href="#" class="social-icon"><img src="images/icons/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul class="footer-links">
+        <li><a href="phones.html">Smartphones</a></li>
+        <li><a href="laptops.html">Laptops</a></li>
+        <li><a href="accessories.html">Accessories</a></li>
+        <li><a href="new-arrivals.html">New Arrivals</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Account</h4><ul class="footer-links">
+        <li><a href="login.html">Login / Sign Up</a></li>
+        <li><a href="account.html">My Account</a></li>
+        <li><a href="cart.html">My Cart</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 UrbanTech. All rights reserved.</span></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout – UrbanTech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+<nav class="navbar">
+  <div class="container"><div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">U</span>
+      <span class="logo-urban">Urban</span><span class="logo-tech">Tech</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:1rem;font-size:0.83rem;color:var(--text-muted);flex-wrap:wrap;">
+      <span>1 Cart</span>
+      <span>›</span>
+      <span style="color:var(--primary);font-weight:600;">2 Checkout</span>
+      <span>›</span>
+      <span>3 Confirmation</span>
+    </div>
+    <a href="cart.html" class="btn btn-glass">← Back to Cart</a>
+  </div></div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>💳 Checkout</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="cart.html">Cart</a><span>›</span><span>Checkout</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="checkout-layout">
+      <div>
+        <div class="checkout-section">
+          <h3 class="checkout-section-title">📋 Contact Information</h3>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="James"/></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Njoroge"/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="you@example.com"/></div>
+          <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-input" placeholder="+254 700 000 000"/></div>
+        </div>
+
+        <div class="checkout-section">
+          <h3 class="checkout-section-title">📍 Delivery Address</h3>
+          <div class="form-group"><label class="form-label">Street Address</label><input type="text" class="form-input" placeholder="123 Kimathi Street"/></div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">City</label>
+              <select class="form-input"><option>Narok</option><option>Mombasa</option><option>Kisumu</option><option>Nakuru</option></select>
+            </div>
+            <div class="form-group"><label class="form-label">Area / Estate</label><input type="text" class="form-input" placeholder="Maasai Mara"/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Delivery Notes (Optional)</label><textarea class="form-input" rows="2" placeholder="Gate color, landmark, etc."></textarea></div>
+        </div>
+
+        <div class="checkout-section">
+          <h3 class="checkout-section-title">🚚 Delivery Method</h3>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <label style="display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(37,99,235,0.05);border:2px solid var(--primary);border-radius:var(--radius);cursor:pointer;">
+              <input type="radio" name="delivery" checked style="accent-color:var(--primary);flex-shrink:0;"/>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:0.9rem;">🚀 Express (Same Day — Maasai Mara)</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Order before 2pm · Within Narok</div>
+              </div>
+              <span style="font-weight:700;color:var(--success);">Free</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(255,255,255,0.4);border:1.5px solid rgba(255,255,255,0.7);border-radius:var(--radius);cursor:pointer;">
+              <input type="radio" name="delivery" style="accent-color:var(--primary);flex-shrink:0;"/>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:0.9rem;">📦 Standard Delivery (1–3 days)</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Narok &amp; surrounding areas</div>
+              </div>
+              <span style="font-weight:700;">KSh 300</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(255,255,255,0.4);border:1.5px solid rgba(255,255,255,0.7);border-radius:var(--radius);cursor:pointer;">
+              <input type="radio" name="delivery" style="accent-color:var(--primary);flex-shrink:0;"/>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:0.9rem;">🏪 In-Store Pickup</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Collect from our Maasai Mara store</div>
+              </div>
+              <span style="font-weight:700;color:var(--success);">Free</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="checkout-section">
+          <h3 class="checkout-section-title">💳 Payment Method</h3>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;">
+            <label style="display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(37,99,235,0.05);border:2px solid var(--primary);border-radius:var(--radius);cursor:pointer;">
+              <input type="radio" name="payment" checked style="accent-color:var(--primary);"/><span style="font-weight:600;">📱 M-Pesa</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(255,255,255,0.4);border:1.5px solid rgba(255,255,255,0.7);border-radius:var(--radius);cursor:pointer;">
+              <input type="radio" name="payment" style="accent-color:var(--primary);"/><span style="font-weight:600;">💳 Visa / Mastercard</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(255,255,255,0.4);border:1.5px solid rgba(255,255,255,0.7);border-radius:var(--radius);cursor:pointer;">
+              <input type="radio" name="payment" style="accent-color:var(--primary);"/><span style="font-weight:600;">🏦 Bank Transfer</span>
+            </label>
+          </div>
+          <div class="form-group"><label class="form-label">M-Pesa Phone Number</label><input type="tel" class="form-input" value="+254 " placeholder="+254 700 000 000"/></div>
+          <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:var(--radius-sm);padding:1rem;font-size:0.85rem;color:var(--text-secondary);">
+            📲 You will receive an M-Pesa STK push to complete your payment after placing the order.
+          </div>
+        </div>
+      </div>
+
+      <div class="order-summary">
+        <h3 class="summary-title">Order Summary</h3>
+        <div style="border-bottom:1px solid rgba(0,0,0,0.06);padding-bottom:1rem;margin-bottom:1rem;">
+          <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:0.75rem;">
+            <div class="product-img-empty" style="width:48px;height:48px;min-width:48px;border-radius:var(--radius-sm);"></div>
+            <div style="flex:1;font-size:0.83rem;font-weight:500;">iPhone 14 Pro Max</div>
+            <span style="font-size:0.85rem;font-weight:600;white-space:nowrap;">KSh 145,000</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:0.75rem;">
+            <div class="product-img-empty" style="width:48px;height:48px;min-width:48px;border-radius:var(--radius-sm);"></div>
+            <div style="flex:1;font-size:0.83rem;font-weight:500;">Sony WH-1000XM5</div>
+            <span style="font-size:0.85rem;font-weight:600;white-space:nowrap;">KSh 42,000</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;">
+            <div class="product-img-empty" style="width:48px;height:48px;min-width:48px;border-radius:var(--radius-sm);"></div>
+            <div style="flex:1;font-size:0.83rem;font-weight:500;">140W GaN Charger ×2</div>
+            <span style="font-size:0.85rem;font-weight:600;white-space:nowrap;">KSh 8,400</span>
+          </div>
+        </div>
+        <div class="summary-row"><span>Subtotal</span><span>KSh 195,400</span></div>
+        <div class="summary-row"><span>Delivery</span><span style="color:var(--success);">Free</span></div>
+        <div class="summary-row"><span>Discount</span><span style="color:var(--danger);">−KSh 9,000</span></div>
+        <div class="summary-row total"><span>Total</span><span>KSh 186,400</span></div>
+        <a href="order-success.html" class="btn btn-primary btn-full btn-lg mt-3">Place Order →</a>
+        <div style="text-align:center;margin-top:1rem;font-size:0.75rem;color:var(--text-muted);">
+          🔒 Your information is encrypted and secure<br>
+          🛡️ 30-Day Return Guarantee
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">UrbanTech</span>
+        <p class="footer-desc">Your trusted tech store in Narok. Premium electronics at honest prices.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon"><img src="images/icons/ig.png" alt="Instagram"></a>
+          <a href="#" class="social-icon"><img src="images/icons/fb.png" alt="Facebook"></a>
+          <a href="#" class="social-icon"><img src="images/icons/linkdln.png" alt="LinkedIn"></a>
+          <a href="#" class="social-icon"><img src="images/icons/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul class="footer-links"><li><a href="phones.html">Smartphones</a></li><li><a href="laptops.html">Laptops</a></li><li><a href="accessories.html">Accessories</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Account</h4><ul class="footer-links"><li><a href="login.html">Login</a></li><li><a href="account.html">My Account</a></li><li><a href="cart.html">Cart</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 UrbanTech. All rights reserved.</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

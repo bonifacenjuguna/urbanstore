@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Account – UrbanTech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+<nav class="navbar">
+  <div class="container"><div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">U</span>
+      <span class="logo-urban">Urban</span><span class="logo-tech">Tech</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="#">Products</a>
+        <ul class="dropdown-menu">
+          <li><a href="phones.html">📱 Phones</a></li>
+          <li><a href="laptops.html">💻 Laptops</a></li>
+          <li><a href="accessories.html">🎧 Accessories</a></li>
+        </ul>
+      </li>
+      <li><a href="new-arrivals.html">New Arrivals</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-icon-btn">👤</a>
+      <a href="cart.html" class="nav-icon-btn">🛒<span class="cart-badge">3</span></a>
+      <a href="#mobileNav" class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></a>
+    </div>
+  </div></div>
+</nav>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#" class="mobile-nav-close">✕</a>
+  <a href="index.html">🏠 Home</a>
+  <div class="mobile-nav-section">Products</div>
+  <a href="phones.html">📱 Phones</a>
+  <a href="laptops.html">💻 Laptops</a>
+  <a href="accessories.html">🎧 Accessories</a>
+  <a href="new-arrivals.html">✨ New Arrivals</a>
+  <a href="reviews.html">⭐ Reviews</a>
+  <a href="about.html">ℹ️ About</a>
+  <a href="contact.html">✉️ Contact</a>
+  <div class="mobile-nav-section">Account</div>
+  <a href="login.html">🔑 Login / Sign Up</a>
+  <a href="cart.html">🛒 Cart</a>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>👤 My Account</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Account</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="account-layout">
+      <!-- Sidebar -->
+      <div class="account-sidebar">
+        <div class="account-avatar">
+          <div class="avatar-img">JN</div>
+          <div class="account-name">James Njoroge</div>
+          <div class="account-email">james@example.com</div>
+        </div>
+        <ul class="account-nav">
+          <li><a href="#panel-orders" class="active">📦 My Orders</a></li>
+          <li><a href="#panel-profile">👤 Edit Profile</a></li>
+          <li><a href="#panel-addresses">📍 Addresses</a></li>
+          <li><a href="#panel-security">🔒 Security</a></li>
+          <li style="margin-top:1rem;border-top:1px solid rgba(0,0,0,0.06);padding-top:1rem;">
+            <a href="login.html" style="color:var(--danger)!important;">🚪 Sign Out</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Panel -->
+      <div>
+        <div class="account-panel" id="panel-orders">
+          <h3 class="panel-title">📦 My Orders</h3>
+          <div style="background:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.7);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+              <div>
+                <div style="font-weight:700;font-family:var(--font-display);">#UT-2024-8847</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Placed on 9 March 2024</div>
+              </div>
+              <span style="background:rgba(16,185,129,0.1);color:var(--success);padding:0.3rem 0.8rem;border-radius:50px;font-size:0.75rem;font-weight:600;">✓ Confirmed</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;">
+              <div style="font-size:0.9rem;font-weight:500;">iPhone 14 Pro Max</div>
+              <div style="font-size:0.85rem;color:var(--text-muted);">×1</div>
+              <div style="font-weight:700;color:var(--primary);margin-left:auto;">KSh 145,000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+              <span style="font-weight:700;font-family:var(--font-display);color:var(--success);">Total: KSh 145,000</span>
+              <div style="display:flex;gap:0.5rem;">
+                <a href="#" class="btn btn-glass">Track</a>
+                <button class="btn btn-outline">Invoice</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="account-panel" id="panel-profile">
+          <h3 class="panel-title">👤 Edit Profile</h3>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" value="James"/></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" value="Njoroge"/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" value="james@example.com"/></div>
+          <div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" value="+254 700 000 000"/></div>
+          <button class="btn btn-primary">Save Changes</button>
+        </div>
+
+        <div class="account-panel" id="panel-addresses">
+          <h3 class="panel-title">📍 Saved Addresses</h3>
+          <div style="background:rgba(255,255,255,0.4);border:2px solid var(--primary);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;position:relative;">
+            <span style="position:absolute;top:0.75rem;right:0.75rem;background:rgba(37,99,235,0.1);color:var(--primary);font-size:0.7rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:50px;">Default</span>
+            <div style="font-weight:600;margin-bottom:0.25rem;">Home</div>
+            <div style="font-size:0.85rem;color:var(--text-secondary);">123 Kimathi Street, Maasai Mara<br>Narok, Kenya</div>
+          </div>
+          <button class="btn btn-outline">+ Add New Address</button>
+        </div>
+
+        <div class="account-panel" id="panel-security">
+          <h3 class="panel-title">🔒 Security</h3>
+          <div class="form-group"><label class="form-label">Current Password</label><input class="form-input" type="password" placeholder="••••••••"/></div>
+          <div class="form-group"><label class="form-label">New Password</label><input class="form-input" type="password" placeholder="Min 8 characters"/></div>
+          <div class="form-group"><label class="form-label">Confirm New Password</label><input class="form-input" type="password" placeholder="Repeat new password"/></div>
+          <button class="btn btn-primary">Update Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">UrbanTech</span>
+        <p class="footer-desc">Your trusted tech store in Narok. Premium electronics at honest prices.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon"><img src="images/icons/ig.png" alt="Instagram"></a>
+          <a href="#" class="social-icon"><img src="images/icons/fb.png" alt="Facebook"></a>
+          <a href="#" class="social-icon"><img src="images/icons/linkdln.png" alt="LinkedIn"></a>
+          <a href="#" class="social-icon"><img src="images/icons/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul class="footer-links"><li><a href="phones.html">Smartphones</a></li><li><a href="laptops.html">Laptops</a></li><li><a href="accessories.html">Accessories</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Account</h4><ul class="footer-links"><li><a href="login.html">Login</a></li><li><a href="account.html">Dashboard</a></li><li><a href="cart.html">Cart</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 UrbanTech. All rights reserved.</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
